@@ -48,7 +48,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<fx:root prefHeight="878.0" prefWidth="1109.0" type="VBox" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
+<VBox prefHeight="878.0" prefWidth="1109.0"  xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
   <children>
     <MenuBar prefHeight="0.0" prefWidth="1237.0" VBox.vgrow="NEVER">
       <menus>
@@ -90,11 +90,11 @@
       </menus>
     </MenuBar>
     <AnchorPane maxWidth="-1.0" prefHeight="853.0" prefWidth="1186.0" VBox.vgrow="ALWAYS"  >
-            <ImageView disable="true" fitHeight="853.0" fitWidth="1292.0">
-               <image>
-                  <Image url="file:/C:\Users\mikon\IdeaProjects\diplom1\src\main\resources\pictures\rerih.jpg" />
-               </image>
-            </ImageView>
+<!--            <ImageView disable="true" fitHeight="853.0" fitWidth="1292.0">-->
+<!--               <image>-->
+<!--                  <Image url="file:/C:/Users/user/Desktop/Diplom/src/main/resources/pictures/rerih.jpg" />-->
+<!--               </image>-->
+<!--            </ImageView>-->
         <Label alignment="CENTER" ellipsisString="" layoutX="116.0" layoutY="-8.0" prefHeight="155.0" prefWidth="1017.0" style="&#10;" text="Печь обжига керамических изделий" textAlignment="CENTER" textFill="#0050b2" textOverrun="LEADING_ELLIPSIS">
           <font>
             <Font name="System Italic" size="40.0" />
@@ -119,4 +119,4 @@
     </AnchorPane>
   </children>
 
-</fx:root>
+</VBox>
