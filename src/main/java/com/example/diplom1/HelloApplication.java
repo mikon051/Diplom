@@ -16,12 +16,16 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         Parent root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
-        primaryStage.setTitle("Swich");
-        primaryStage.setScene(new Scene(root, 750, 500));
+        primaryStage.setTitle("Диплом");
+        primaryStage.setScene(new Scene(root, 1200, 678));
+//        root.getStylesheets().add(getClass().getResource("file:/src/main/resources/css/style.css").toExternalForm());
+
         primaryStage.show();
     }
     public static void main(String[] args) {
+
         launch(args);
     }
 }

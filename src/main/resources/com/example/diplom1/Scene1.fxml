@@ -1,13 +1,175 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<AnchorPane id="AnchorPane" prefHeight="237.0" prefWidth="448.0" xmlns="http://javafx.com/javafx/21"
-  xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="678.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
   <children>
-    <Button fx:id="btn1" layoutX="159.0" layoutY="126.0" mnemonicParsing="false"
-      onAction="#handleButtonAction" text="Click to go to scene 2"/>
-    <Label layoutX="179.0" layoutY="71.0" text="You re in scene 2"/>
+    <Button fx:id="MainMenu" layoutX="440.0" layoutY="317.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="175.0" prefWidth="302.0" text="Start" />
+      <ImageView fitHeight="719.0" fitWidth="1200.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:\C:\Users\mikon\OneDrive\Рабочий стол\Diplom\Diplom\src\main\resources\pictures\e85e57b1e29b95c737a5de7b6996d872.jpg" />
+         </image>
+         <effect>
+            <Blend mode="OVERLAY" opacity="0.6">
+               <topInput>
+                  <GaussianBlur radius="22.31" />
+               </topInput>
+            </Blend>
+         </effect>
+      </ImageView>
+      <MenuBar prefHeight="22.0" prefWidth="1200.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="214.0" layoutY="86.0" text="Печь обжига керамической плитки" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Italic" size="52.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.5829383886255923" endY="1.0" startX="0.5592417061611374">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="281.0" layoutY="209.0" text="Исследование, Синтез, Диагностика " textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Italic" size="41.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.41232227488151657" endY="0.7535545023696681" startX="0.8436018957345972" startY="0.06635071090047392">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="467.0" layoutY="535.0" text="Санкт-Петербург" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Italic" size="31.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.0853080568720378" endY="0.47393364928909953" startX="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label layoutX="567.0" layoutY="600.0" text="2024" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+         <font>
+            <Font name="System Italic" size="31.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.0853080568720378" endY="0.47393364928909953" startX="0.7298578199052133">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+
+      <Label layoutX="318.0" layoutY="297.0" nodeOrientation="RIGHT_TO_LEFT" text="Нажмите &quot;Епter&quot;" textAlignment="JUSTIFY" textFill="#15ff00" textOverrun="CENTER_WORD_ELLIPSIS">
+
+         <font>
+            <Font name="System Italic" size="70.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="TEXT" />
+         </cursor>
+         <effect>
+            <Lighting>
+               <bumpInput>
+                  <Shadow blurType="GAUSSIAN" height="0.0" radius="0.0" width="0.0">
+                     <color>
+                        <Color green="0.9333333373069763" blue="1.0" />
+                     </color>
+                  </Shadow>
+               </bumpInput>
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.06666667014360428" green="1.0" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </Label>
+
   </children>
+    <stylesheets>
+        <URL value="file:/src/main/resources/css/style.css" />
+    </stylesheets>
+
 </AnchorPane>
