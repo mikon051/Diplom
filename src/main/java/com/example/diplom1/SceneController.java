@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 
 public class SceneController implements Initializable {
 
@@ -29,62 +30,64 @@ public class SceneController implements Initializable {
     var source = event.getSource();
 
     if (source instanceof Button sourceButton) {
-      Stage window = (Stage) sourceButton.getScene().getWindow();
-      if (sourceButton.equals(MainMenu)) {
-        window.close();
-        root = FXMLLoader.load(getClass().getResource("SceneMenuMain.fxml"));
-        Scene scene = new Scene(root);
-        stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-      } else if (sourceButton.equals(AboutWorkButton)) {
-        window.close();
-        root = FXMLLoader.load(getClass().getResource("AboutWork.fxml"));
-        Scene scene = new Scene(root);
-        stage = new Stage();
+      Window window = sourceButton.getScene().getWindow();
+     if(sourceButton.getScene().getWindow() instanceof Stage) {
+       Stage currentStage = (Stage) window;
+       if (sourceButton.equals(MainMenu)) {
+         currentStage.close();
+         root = FXMLLoader.load(getClass().getResource("SceneMenuMain.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
+       } else if (sourceButton.equals(AboutWorkButton)) {
+         currentStage.close();
+         root = FXMLLoader.load(getClass().getResource("AboutWork.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
 
-        stage.setScene(scene);
-        stage.show();
-      } else if (sourceButton.equals(OnSynthesis)) {
-        window.close();
-        root = FXMLLoader.load(getClass().getResource("Synthesis.fxml"));
-        Scene scene = new Scene(root);
-        stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+         stage.setScene(scene);
+         stage.show();
+       } else if (sourceButton.equals(OnSynthesis)) {
+         currentStage.close();
+         root = FXMLLoader.load(getClass().getResource("Synthesis.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
 
-      } else if (sourceButton.equals(OnObject)) {
-        window.close();
-        root = FXMLLoader.load(getClass().getResource("Object.fxml"));
-        Scene scene = new Scene(root);
-        stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+       } else if (sourceButton.equals(OnObject)) {
+         currentStage.close();
+         root = FXMLLoader.load(getClass().getResource("Object.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
 
-      }
+       }
 
-      if (sourceButton.equals(Exit)) {
-        window.close();
-      }
-      if (sourceButton.equals(Back)) {
+       if (sourceButton.equals(Exit)) {
+         currentStage.close();
+       }
+       if (sourceButton.equals(Back)) {
 
-        window.close();
-        root = FXMLLoader.load(getClass().getResource("SceneMenuMain.fxml"));
-        Scene scene = new Scene(root);
-        stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-      }
-
-      if (sourceButton.equals(ProcessItem)) {
-        window.close();
-        root = FXMLLoader.load(getClass().getResource("Process.fxml"));
-        Scene scene = new Scene(root);
-        stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-      }
-
+         currentStage.close();
+         root = FXMLLoader.load(getClass().getResource("SceneMenuMain.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
+       }
+     }else {
+       if (sourceButton.equals(ProcessItem)) {
+         stage.close();
+         root = FXMLLoader.load(getClass().getResource("Process.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
+       }
+     }
 
 
 
