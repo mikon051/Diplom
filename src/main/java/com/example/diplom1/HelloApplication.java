@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("Scene1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("TitulScene.fxml"));
         primaryStage.setTitle("Диплом");
         primaryStage.setScene(new Scene(root, 1200, 678));
 //        root.getStylesheets().add(getClass().getResource("file:/src/main/resources/css/style.css").toExternalForm());

@@ -23,7 +23,7 @@ public class SceneController implements Initializable {
   @FXML
   private MenuButton OnObject, OnSynthesis;
   @FXML
-  private Button MainMenu, Exit, AboutWorkButton, Back,ProcessItem, TempItem, DiagnostItem,InfoItem;
+  private Button MainMenu, Exit, AboutWorkButton, Back,ProcessItem, TempItem, DiagnostItem,InfoItem, StrucACR;
   @FXML
   private void handleButtonAction(ActionEvent event) throws Exception {
 
@@ -66,10 +66,10 @@ public class SceneController implements Initializable {
 
        }
 
-       if (sourceButton.equals(Exit)) {
+       else if (sourceButton.equals(Exit)) {
          currentStage.close();
        }
-       if (sourceButton.equals(Back)) {
+       else if (sourceButton.equals(Back)) {
 
          currentStage.close();
          root = FXMLLoader.load(getClass().getResource("SceneMenuMain.fxml"));
@@ -86,27 +86,51 @@ public class SceneController implements Initializable {
          stage = new Stage();
          stage.setScene(scene);
          stage.show();
+       } else
+       if (sourceButton.equals(TempItem)) {
+         stage.close();
+         root = FXMLLoader.load(getClass().getResource("TempPr.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
        }
-     }
+       else
+
+     if (sourceButton.equals(DiagnostItem)) {
+         stage.close();
+         root = FXMLLoader.load(getClass().getResource("Diagnost.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
+       }
+     else
+
+       if (sourceButton.equals(InfoItem)) {
+         stage.close();
+         root = FXMLLoader.load(getClass().getResource("Info.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
+       }
+       else
+
+       if (sourceButton.equals(StrucACR)) {
+         stage.close();
+         root = FXMLLoader.load(getClass().getResource("StrukcherACR.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
+       }
+       }
 
 
 
     }
   }
-//  private void onMenu(ActionEvent event) throws Exception{
-//    var source = event.getSource();
-//    if (source instanceof MenuItem sourceButton){
-//      if (sourceButton.equals(menu1)) {
-//
-//        root = FXMLLoader.load(getClass().getResource("Scene3.fxml"));K
-//        Scene scene = new Scene(root);
-//        stage = new Stage();
-//
-//        stage.setScene(scene);
-//        stage.show();
-//      }
-//    }
-//  }
 
   @Override
   public void initialize(URL url, ResourceBundle rb) {

@@ -66,7 +66,7 @@
                                  <font>
                                     <Font name="System Italic" size="18.0" />
                                  </font>
-                              </Button>
+                                          </Button>
                               <MenuButton fx:id="OnObject" mnemonicParsing="false" prefHeight="68.0" prefWidth="180.0" style="          -fx-padding: 8 15 15 15;     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;     -fx-background-radius: 8;     -fx-background-color:       #ff6d19,         #9d4024,         #d86e3a,         #ff6f1b;     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );     -fx-font-weight: bold;     -fx-font-size: 1.1em;" text="Объект" textFill="WHITE">
                            <items>
                                     <MenuItem mnemonicParsing="false" text="1">
