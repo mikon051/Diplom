@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class Regul extends Application {
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws Exception{
 
         LineChart<Number, Number> lineChart = drawGraph();
 
@@ -58,19 +58,19 @@ public class Regul extends Application {
         return lineChart;
     }
 
-    private NumberAxis createAxis(String label) {
+    public NumberAxis createAxis(String label) {
         NumberAxis axis = new NumberAxis();
         axis.setLabel(label);
         return axis;
     }
 
-    private XYChart.Series createSeries(String name) {
+    public XYChart.Series createSeries(String name) {
         XYChart.Series series = new XYChart.Series();
         series.setName(name);
         return series;
     }
 
-    private MiniPID createMiniPID(double F) {
+    public MiniPID createMiniPID(double F) {
         MiniPID miniPID = new MiniPID(0.25, 0.01, 0.4, F);
         miniPID.setOutputLimits(10);
         miniPID.setSetpointRange(40);
@@ -82,12 +82,12 @@ public class Regul extends Application {
         // Добавляем точки на график
         series.getData().add(data);
     }
-    private XYChart.Series getCustomSeries(String name) {
+    public XYChart.Series getCustomSeries(String name) {
         XYChart.Series series = createSeries(name);
         return series;
     }
 
-    private LineChart<Number, Number> getLineChart () {
+    public LineChart<Number, Number> getLineChart () {
         NumberAxis xAxis = createAxis("X Axis");
         NumberAxis yAxis = createAxis("Y Axis");
 
