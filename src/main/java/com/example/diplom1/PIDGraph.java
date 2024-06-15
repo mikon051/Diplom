@@ -18,7 +18,7 @@ public class PIDGraph {
         miniPID.setSetpoint(target);
 
         System.err.printf("Target\tActual\tOutput\tError\n");
-//TODO:Добавить дескретность как поле через i, так же выводить ошибку
+//TODO:Добавить дескретность как поле через i, так же выводить ошибку Error
         for (int i = 0; i < 100; i++) {
             output = miniPID.getOutput(actual, target);
             actual = actual + output;
@@ -48,7 +48,10 @@ public class PIDGraph {
     public static MiniPID createMiniPID(double P, double I, double D, double F) {
         MiniPID miniPID = new MiniPID(P, I, D, F);
         miniPID.setOutputLimits(100);
-        miniPID.setSetpointRange(400);
+        miniPID.setMaxIOutput(2);
+        miniPID.setOutputRampRate(3);
+        miniPID.setOutputFilter(.3);
+        miniPID.setSetpointRange(40);
         return miniPID;
     }
 

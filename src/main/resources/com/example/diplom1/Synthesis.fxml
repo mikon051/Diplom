@@ -30,19 +30,19 @@
             <Font name="System Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="TextK0" layoutX="88.0" layoutY="46.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
+      <TextField id="K0" fx:id="TextK0" layoutX="88.0" layoutY="46.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
       <Label layoutX="34.0" layoutY="44.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;" text="K0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="TextT" layoutX="88.0" layoutY="95.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
+      <TextField id="T0" fx:id="TextT" layoutX="88.0" layoutY="95.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
       <Label layoutX="34.0" layoutY="93.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;" text="T">
          <font>
             <Font name="System Italic" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="TextTay" layoutX="88.0" layoutY="151.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
+      <TextField id="Tay" fx:id="TextTay" layoutX="88.0" layoutY="151.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
       <Label layoutX="34.0" layoutY="149.0" style="-fx-background-color: white;" text="Tay">
          <font>
             <Font size="18.0" />

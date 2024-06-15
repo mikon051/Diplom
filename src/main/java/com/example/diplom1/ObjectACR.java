@@ -41,6 +41,6 @@ public class ObjectACR {
 
     double L = calculateLaplacian(K0, T0, Tay );
     public double formula() {
-        return  (this.K0/((this.T0*L)+1))*Math.exp(-(this.Tay));
+        return  (this.K0/((this.T0*L)+1))*Math.exp(-(this.Tay*L));
     }
 }
