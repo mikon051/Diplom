@@ -46,8 +46,8 @@ public class PIDGraph {
     }
 
     public static MiniPID createMiniPID(double P, double I, double D, double F) {
-        MiniPID miniPID = new MiniPID(P, I, D, F);
-        miniPID.setOutputLimits(100);
+        MiniPID miniPID = new MiniPID(P*F, I*F, D*F);
+        miniPID.setOutputLimits(10);
         miniPID.setMaxIOutput(2);
         miniPID.setOutputRampRate(3);
         miniPID.setOutputFilter(.3);
