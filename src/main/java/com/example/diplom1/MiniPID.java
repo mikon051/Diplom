@@ -1,4 +1,5 @@
 package com.example.diplom1;
+
 /**
 * Small, easy to use PID implementation with advanced controller capability.<br> 
 * Minimal usage:<br>
@@ -43,12 +44,12 @@ public class MiniPID {
 	//**********************************
 	// Constructor functions
 	//**********************************
-	
 	/**
-	 * Create a MiniPID class object. 
+	 * Create a MiniPID class object.
 	 * See setP, setI, setD methods for more detailed parameters.
-	 * @param p Proportional gain. Large if large difference between setpoint and target. 
-	 * @param i Integral gain.  Becomes large if setpoint cannot reach target quickly. 
+	 *
+	 * @param p Proportional gain. Large if large difference between setpoint and target.
+	 * @param i Integral gain.  Becomes large if setpoint cannot reach target quickly.
 	 * @param d Derivative gain. Responds quickly to large changes in error. Small values prevents P and I terms from causing overshoot.
 	 */
 	public MiniPID(double p, double i, double d){

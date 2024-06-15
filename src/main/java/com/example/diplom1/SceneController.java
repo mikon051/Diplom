@@ -3,15 +3,30 @@ package com.example.diplom1;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import com.sun.tools.javac.Main;
+import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import javafx.util.Duration;
+
+import static com.example.diplom1.PIDGraph.createMiniPID;
+import static com.example.diplom1.PIDGraph.drawGraph;
+
 
 public class SceneController implements Initializable {
 
@@ -19,16 +34,26 @@ public class SceneController implements Initializable {
   Parent root;
 
   @FXML
-  private Label lbl1, lbl2, Menu, MenuClose;
+  private TextField TextK0, TextT, TextTay, TextP, TextI, TextD ;
+  @FXML
+  private Label Menu;
+  @FXML
+  private Label MenuClose;
+  @FXML
+  private AnchorPane slider;
+  @FXML
+  private Label lbl1, lbl2;
   @FXML
   private MenuButton OnObject, OnSynthesis;
   @FXML
-  private Button MainMenu, Exit, AboutWorkButton, Back,ProcessItem, TempItem, DiagnostItem,InfoItem, StrucACR;
+  private Button MainMenu, AboutWorkButton, Back,ProcessItem, TempItem, DiagnostItem,InfoItem, StrucACR, Math,Exit1, MainMath;
   @FXML
   private void handleButtonAction(ActionEvent event) throws Exception {
 
+
     var source = event.getSource();
 
+//Отвечает переход на другую сцену после нажатия кнопки
     if (source instanceof Button sourceButton) {
       Window window = sourceButton.getScene().getWindow();
      if(sourceButton.getScene().getWindow() instanceof Stage) {
@@ -48,7 +73,41 @@ public class SceneController implements Initializable {
 
          stage.setScene(scene);
          stage.show();
-       } else if (sourceButton.equals(OnSynthesis)) {
+       }else if (sourceButton.equals(MainMath)) {
+
+           // Создаем сцену и добавляем график на нее
+
+           String StringK0 = this.TextK0.getText();
+           double K0 = Double.parseDouble(StringK0);
+
+           String StringT = this.TextT.getText();
+           double T = Double.parseDouble(StringT);
+
+           String StringTay = this.TextTay.getText();
+           double Tay = Double.parseDouble(StringTay);
+
+           String StringP = this.TextP.getText();
+           double P = Double.parseDouble(StringP);
+
+           String StringI = this.TextI.getText();
+           double I = Double.parseDouble(StringI);
+
+           String StringD = this.TextD.getText();
+           double D = Double.parseDouble(StringD);
+
+           ObjectACR F = new ObjectACR(K0, T, Tay);
+           double object = F.formula();
+
+           MiniPID miniPID = createMiniPID(P, I, D, object);
+
+           LineChart<Number, Number> lineChart = drawGraph(miniPID);
+
+           Scene scene = new Scene(lineChart, 800, 600);
+           stage = new Stage();
+           stage.setScene(scene);
+           stage.show();
+       }
+       else if (sourceButton.equals(OnSynthesis)) {
          currentStage.close();
          root = FXMLLoader.load(getClass().getResource("Synthesis.fxml"));
          Scene scene = new Scene(root);
@@ -66,7 +125,7 @@ public class SceneController implements Initializable {
 
        }
 
-       else if (sourceButton.equals(Exit)) {
+       else if (sourceButton.equals(Exit1)) {
          currentStage.close();
        }
        else if (sourceButton.equals(Back)) {
@@ -78,6 +137,7 @@ public class SceneController implements Initializable {
          stage.setScene(scene);
          stage.show();
        }
+
      }else {
        if (sourceButton.equals(ProcessItem)) {
          stage.close();
@@ -117,6 +177,14 @@ public class SceneController implements Initializable {
        }
        else
 
+       if (sourceButton.equals(Math)) {
+         stage.close();
+         root = FXMLLoader.load(getClass().getResource("Synthesis.fxml"));
+         Scene scene = new Scene(root);
+         stage = new Stage();
+         stage.setScene(scene);
+         stage.show();
+       } else
        if (sourceButton.equals(StrucACR)) {
          stage.close();
          root = FXMLLoader.load(getClass().getResource("StrukcherACR.fxml"));
@@ -126,10 +194,9 @@ public class SceneController implements Initializable {
          stage.show();
        }
        }
-
-
-
     }
+
+
   }
 
   @Override
@@ -137,3 +204,4 @@ public class SceneController implements Initializable {
 
   }
   }
+

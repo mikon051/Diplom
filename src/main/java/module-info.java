@@ -9,6 +9,10 @@ module com.example.diplom1 {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires jdk.compiler;
+    requires nd4j.api;
+    requires deeplearning4j.nn;
+    requires commons.math3;
 
     opens com.example.diplom1 to javafx.fxml;
     exports com.example.diplom1;

@@ -17,6 +17,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
@@ -80,7 +81,7 @@
             <Font name="System Italic" size="41.0" />
          </font>
          <textFill>
-            <LinearGradient endX="0.41232227488151657" endY="0.7535545023696681" startX="0.8436018957345972" startY="0.06635071090047392">
+            <RadialGradient centerX="0.40055248618784534" centerY="0.5" radius="0.5">
                <stops>
                   <Stop>
                      <color>
@@ -93,7 +94,7 @@
                      </color>
                   </Stop>
                </stops>
-            </LinearGradient>
+            </RadialGradient>
          </textFill>
       </Label>
       <Label layoutX="467.0" layoutY="535.0" text="Санкт-Петербург" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
