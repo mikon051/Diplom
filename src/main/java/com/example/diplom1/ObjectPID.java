@@ -12,6 +12,10 @@ package com.example.diplom1;
 
         private ProcessObject processObject; // объект процесса
 
+        public double getOutputNew() {
+            return output;
+        }
+
         public ObjectPID(double kp, double ki, double kd, ProcessObject processObject) {
             this.kp = kp;
             this.ki = ki;
@@ -21,6 +25,18 @@ package com.example.diplom1;
             integral = 0;
             derivative = 0;
         }
+
+        public ObjectPID(double kp, double ki, double kd) {
+            this.kp = kp;
+            this.ki = ki;
+            this.kd = kd;
+            processObject = processObject;
+            prevError = 0;
+            integral = 0;
+            derivative = 0;
+        }
+
+
 
         public void setSetpoint(double setpoint) {
             this.setpoint = setpoint;

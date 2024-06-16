@@ -24,8 +24,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.util.Duration;
 
-import static com.example.diplom1.PIDGraph.createMiniPID;
-import static com.example.diplom1.PIDGraph.drawGraph;
+import static com.example.diplom1.PIDGraph.*;
 
 
 public class SceneController implements Initializable {
@@ -34,7 +33,7 @@ public class SceneController implements Initializable {
   Parent root;
 
   @FXML
-  private TextField TextK0, TextT, TextTay, TextP, TextI, TextD ;
+  private TextField TextK0, TextT, TextTay, TextP, TextI, TextD, TextDis, TextQuest, TextError, TextTime ;
   @FXML
   private Label Menu;
   @FXML
@@ -79,28 +78,49 @@ public class SceneController implements Initializable {
 
            String StringK0 = this.TextK0.getText();
            double K0 = Double.parseDouble(StringK0);
-
+//           TextK0.clear();
+//
            String StringT = this.TextT.getText();
            double T = Double.parseDouble(StringT);
+//           TextT.clear();
 
            String StringTay = this.TextTay.getText();
            double Tay = Double.parseDouble(StringTay);
+//           TextTay.clear();
 
            String StringP = this.TextP.getText();
            double P = Double.parseDouble(StringP);
+//           TextP.clear();
 
            String StringI = this.TextI.getText();
            double I = Double.parseDouble(StringI);
+//           TextI.clear();
 
            String StringD = this.TextD.getText();
            double D = Double.parseDouble(StringD);
+//           TextD.clear();
 
-           ObjectACR F = new ObjectACR(K0, T, Tay);
-           double object = F.formula();
+           MiniPID miniPID = createMiniPID(P, I, D);
 
-           MiniPID miniPID = createMiniPID(P, I, D, object);
+           String StringDis = this.TextDis.getText();
+           double Dis = Double.parseDouble(StringDis);
 
-           LineChart<Number, Number> lineChart = drawGraph(miniPID);
+           this.TextError.setText(String.valueOf(TargetActual));
+
+           String StringQuest = this.TextQuest.getText();
+           double Quest = Double.parseDouble(StringQuest);
+
+           String StringTime = this.TextTime.getText();
+           double Time = Double.parseDouble(StringTime);
+
+//           ObjectACR F = new ObjectACR(K0, T, Tay);
+//           double object = F.formula();
+
+
+
+
+
+           LineChart<Number, Number> lineChart = drawGraph(miniPID, K0, Tay, Quest, Time, Dis);
 
            Scene scene = new Scene(lineChart, 800, 600);
            stage = new Stage();

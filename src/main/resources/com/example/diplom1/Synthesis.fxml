@@ -48,20 +48,26 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="652.0" layoutY="45.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
+      <TextField fx:id="TextDis" layoutX="652.0" layoutY="45.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
       <Label layoutX="507.0" layoutY="46.0" style="-fx-background-color: white;" text="Дискретность">
          <font>
             <Font name="System Italic" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="652.0" layoutY="96.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
+      <TextField fx:id="TextQuest" layoutX="652.0" layoutY="96.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
       <Label layoutX="505.0" layoutY="96.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;" text="Задание">
          <font>
             <Font name="System Italic" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="652.0" layoutY="150.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
+      <TextField fx:id="TextError" layoutX="652.0" layoutY="150.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
       <Label layoutX="509.0" layoutY="149.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;" text="Ошибка">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="TextTime" layoutX="653.0" layoutY="194.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
+      <Label layoutX="510.0" layoutY="193.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;" text="Диапазон">
          <font>
             <Font name="System Italic" size="18.0" />
          </font>

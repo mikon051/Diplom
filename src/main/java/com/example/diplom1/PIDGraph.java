@@ -5,22 +5,32 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 
+
+
 public class PIDGraph {
-    public static LineChart<Number, Number> drawGraph(MiniPID miniPID) {
+    public static double actual = 0;
+
+    public static double TargetActual;
+
+    public static double getTargetActual() {
+        return TargetActual;
+    }
+
+    public static LineChart<Number, Number> drawGraph(MiniPID miniPID, double K0, double Tay, double target, double time, double Dis) {
         LineChart<Number, Number> lineChart = getLineChart();
         XYChart.Series seriesActual = getCustomSeries("seriesActual");
         XYChart.Series seriesTarget = getCustomSeries("seriesTarget");
 
-        double target = 100;
-        double actual = 0;
-        double output = 0;
-
         miniPID.setSetpoint(target);
-
+        double output = 0;
         System.err.printf("Target\tActual\tOutput\tError\n");
-//TODO:Добавить дескретность как поле через i, так же выводить ошибку Error
-        for (int i = 0; i < 100; i++) {
-            output = miniPID.getOutput(actual, target);
+
+        addPoints(0, 0, seriesActual);
+        addPoints(0, target, seriesTarget);
+        for (double i = Tay ; i < time; i=i+Dis) {
+
+            System.err.printf("%3.2f\t%3.2f\t%3.2f\t%3.2f\n", target, actual, output, (target-actual));
+            output = miniPID.getOutput(actual, target, K0);
             actual = actual + output;
 
             addPoints(i, actual, seriesActual);
@@ -29,7 +39,7 @@ public class PIDGraph {
 
         lineChart.getData().add(seriesActual);
         lineChart.getData().add(seriesTarget);
-
+        TargetActual = actual-target;
         return lineChart;
     }
 
@@ -42,20 +52,30 @@ public class PIDGraph {
     public static XYChart.Series createSeries(String name) {
         XYChart.Series series = new XYChart.Series();
         series.setName(name);
+
+
         return series;
     }
 
-    public static MiniPID createMiniPID(double P, double I, double D, double F) {
-        MiniPID miniPID = new MiniPID(P*F, I*F, D*F);
+
+
+    public static MiniPID createMiniPID(double P, double I, double D) {
+//        MyProcessObject processObject = new MyProcessObject(5);
+//        ObjectPID objectPID = new ObjectPID( P,  I,  D,  processObject);
+//        objectPID.setSetpoint(10);
+//        objectPID.control();
+        //        return objectPID;
+        MiniPID miniPID = new MiniPID(P, I, D);
         miniPID.setOutputLimits(10);
-        miniPID.setMaxIOutput(2);
+        miniPID.setMaxIOutput(10);
         miniPID.setOutputRampRate(3);
-        miniPID.setOutputFilter(.3);
-        miniPID.setSetpointRange(40);
+        miniPID.setOutputFilter(3);
+        miniPID.setSetpointRange(5);
         return miniPID;
+
     }
 
-    public static void addPoints(int X, double Y, XYChart.Series series) {
+    public static void addPoints(double X, double Y, XYChart.Series series) {
         XYChart.Data data = new XYChart.Data(X, Y);
         // Добавляем точки на график
 

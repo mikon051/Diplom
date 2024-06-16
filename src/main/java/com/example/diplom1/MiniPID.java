@@ -26,7 +26,7 @@ public class MiniPID {
 
 	private double maxOutput=0; 
 	private double minOutput=0;
-
+	private double error;
 	private double setpoint=0;
 
 	private double lastActual=0;
@@ -38,6 +38,7 @@ public class MiniPID {
 	private double lastOutput=0;
 
 	private double outputFilter=0;
+	private double output=0;
 
 	private double setpointRange=0;
 
@@ -250,7 +251,7 @@ public class MiniPID {
 	 * @param setpoint The target value for the system
 	 * @return calculated output value for driving the system
 	 */
-	public double getOutput(double actual, double setpoint){
+	public double getOutput(double actual, double setpoint, double K0){
 		double output;
 		double Poutput;
 		double Ioutput;
@@ -265,7 +266,7 @@ public class MiniPID {
 		}
 
 		// Do the simple parts of the calculations
-		double error=setpoint-actual;
+		error=setpoint-actual;
 
 		// Calculate F output. Notice, this depends only on the setpoint, and not the error. 
 		Foutput=F*setpoint;
@@ -277,7 +278,7 @@ public class MiniPID {
 		// For sensor, sanely assume it was exactly where it is now.
 		// For last output, we can assume it's the current time-independent outputs. 
 		if(firstRun){
-			lastActual=actual;
+			lastActual=K0;
 			lastOutput=Poutput+Foutput;
 			firstRun=false;
 		}
@@ -443,5 +444,8 @@ public class MiniPID {
 			if(D<0) D*=-1;
 			if(F<0) F*=-1;
 		}
+	}
+	public double getErrorSum(){
+		return error;
 	}
 }
