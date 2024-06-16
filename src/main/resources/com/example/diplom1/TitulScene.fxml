@@ -15,6 +15,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.RadialGradient?>
@@ -55,7 +56,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label layoutX="214.0" layoutY="86.0" text="Печь обжига керамической плитки" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+      <Label layoutX="210.0" layoutY="65.0" text="Печь обжига керамической плитки" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="System Italic" size="52.0" />
          </font>
@@ -76,12 +77,12 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="281.0" layoutY="209.0" text="Исследование, Синтез, Диагностика " textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+      <Label layoutX="281.0" layoutY="161.0" text="Исследование, Синтез, Диагностика " textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="System Italic" size="41.0" />
          </font>
          <textFill>
-            <RadialGradient centerX="0.40055248618784534" centerY="0.5" radius="0.5">
+            <RadialGradient centerX="0.5331491712707183" centerY="0.5" radius="0.5">
                <stops>
                   <Stop>
                      <color>
@@ -167,6 +168,7 @@
             </Lighting>
          </effect>
       </Label>
+      <Pane layoutX="284.0" layoutY="271.0" prefHeight="155.0" prefWidth="615.0" style="-fx-border-color: white; -fx-border-radius: 100px; -fx-border-width: 5px;" />
 
   </children>
     <stylesheets>
