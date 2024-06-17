@@ -13,6 +13,7 @@ module com.example.diplom1 {
     requires nd4j.api;
     requires deeplearning4j.nn;
     requires commons.math3;
+    requires java.desktop;
 
     opens com.example.diplom1 to javafx.fxml;
     exports com.example.diplom1;

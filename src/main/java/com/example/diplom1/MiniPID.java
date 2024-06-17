@@ -251,7 +251,7 @@ public class MiniPID {
 	 * @param setpoint The target value for the system
 	 * @return calculated output value for driving the system
 	 */
-	public double getOutput(double actual, double setpoint, double K0){
+	public double getOutput(double actual, double setpoint, double K0, double func){
 		double output;
 		double Poutput;
 		double Ioutput;
@@ -299,7 +299,7 @@ public class MiniPID {
 		}    
 
 		// And, finally, we can just add the terms up
-		output=Foutput + Poutput + Ioutput + Doutput;
+		output=(Foutput + Poutput + Ioutput + Doutput)*func;
 
 		// Figure out what we're doing with the error.
 		if(minOutput!=maxOutput && !bounded(output, minOutput,maxOutput) ){
@@ -446,6 +446,6 @@ public class MiniPID {
 		}
 	}
 	public double getErrorSum(){
-		return error;
+		return errorSum;
 	}
 }

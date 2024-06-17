@@ -14,80 +14,99 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="678.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
-   <children>
-      <ImageView fitHeight="678.0" fitWidth="1200.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.92">
-         <image>
-            <Image url="@../../../pictures/FonOrange.png" />
-         </image>
-         <cursor>
-            <Cursor fx:constant="TEXT" />
-         </cursor>
-         <effect>
-            <BoxBlur height="9.0" width="8.79">
-               <input>
-                  <Glow level="0.12">
-                     <input>
-                        <GaussianBlur radius="6.39" />
-                     </input>
-                  </Glow>
-               </input>
-            </BoxBlur>
-         </effect>
-      </ImageView>
-         <Button fx:id="Back" layoutY="608.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0" prefWidth="1200.0" style="             -fx-padding: 8 15 15 15;     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;   -fx-background-radius: 8;     -fx-background-color:    linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),         #9d4024,         #d86e3a,      #ff6f1b;     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );   " text="Вернуться" textFill="WHITE">
+<AnchorPane prefHeight="678.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
+    <children>
+        <ImageView fitHeight="678.0" fitWidth="1200.0" nodeOrientation="RIGHT_TO_LEFT" opacity="0.92">
+            <image>
+                <Image url="@../../../pictures/FonOrange.png"/>
+            </image>
+            <cursor>
+                <Cursor fx:constant="TEXT"/>
+            </cursor>
+            <effect>
+                <BoxBlur height="9.0" width="8.79">
+                    <input>
+                        <Glow level="0.12">
+                            <input>
+                                <GaussianBlur radius="6.39"/>
+                            </input>
+                        </Glow>
+                    </input>
+                </BoxBlur>
+            </effect>
+        </ImageView>
+        <Button fx:id="Back1" layoutY="608.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0"
+                prefWidth="1200.0"
+                style="             -fx-padding: 8 15 15 15;     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;   -fx-background-radius: 8;     -fx-background-color:    linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),         #9d4024,         #d86e3a,      #ff6f1b;     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );   "
+                text="Вернуться" textFill="WHITE">
             <font>
-               <Font name="System Italic" size="30.0" />
+                <Font name="System Italic" size="30.0"/>
             </font>
-         </Button>
-      <Pane layoutX="75.0" layoutY="14.0" opacity="0.35" prefHeight="579.0" prefWidth="1036.0" style="-fx-background-color: white;" />
-      <Label layoutX="435.0" layoutY="14.0" prefHeight="58.0" prefWidth="331.0" text="Больше о работе" textAlignment="CENTER" textFill="#00135e">
-         <font>
-            <Font name="System Italic" size="40.0" />
-         </font>
-      </Label>
-      <Label layoutX="259.0" layoutY="72.0" prefHeight="58.0" prefWidth="684.0" text="Программный комплекс «Керамика»" textAlignment="CENTER" textFill="#00135e">
-         <font>
-            <Font name="System Italic" size="40.0" />
-         </font>
-      </Label>
-      <Text fill="#00135e" layoutX="116.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Программный комплекс предназначен для изучения процесса обжига керамических изделий как объекта моделирования и автоматизации. Он позволяет выполнить:" textAlignment="JUSTIFY" wrappingWidth="968.13671875">
-         <font>
-            <Font name="System Italic" size="30.0" />
-         </font>
-         <effect>
-            <Bloom />
-         </effect>
-      </Text>
-      <Text fill="#00135e" layoutX="109.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="- Контроль достоверности информационного канала измерения;" textAlignment="JUSTIFY" wrappingWidth="968.13671875">
-         <font>
-            <Font name="System Italic" size="30.0" />
-         </font>
-      </Text>
-      <Text fill="#00135e" layoutX="117.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Анализ динамической модели;" textAlignment="JUSTIFY" wrappingWidth="968.13671875">
-         <font>
-            <Font name="System Italic" size="30.0" />
-         </font>
-      </Text>
-      <Text fill="#00135e" layoutX="116.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Анализ особенностей технологического процесса;" textAlignment="JUSTIFY" wrappingWidth="968.13671875">
-         <font>
-            <Font name="System Italic" size="30.0" />
-         </font>
-      </Text>
-      <Text fill="#00135e" layoutX="116.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Анализ информационной модели;" textAlignment="JUSTIFY" wrappingWidth="968.13671875">
-         <font>
-            <Font name="System Italic" size="30.0" />
-         </font>
-      </Text>
-      <Text fill="#00135e" layoutX="117.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Синтез одноконтурной АСР по выбранному каналу;" textAlignment="JUSTIFY" wrappingWidth="968.13671875">
-         <font>
-            <Font name="System Italic" size="30.0" />
-         </font>
-      </Text>
-      <Text fill="#00135e" layoutX="117.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Идентификацию отказов канала измерения температуры:" textAlignment="JUSTIFY" wrappingWidth="968.13671875">
-         <font>
-            <Font name="System Italic" size="30.0" />
-         </font>
-      </Text>
-   </children>
+        </Button>
+        <Pane layoutX="75.0" layoutY="14.0" opacity="0.35" prefHeight="579.0" prefWidth="1036.0"
+              style="-fx-background-color: white;"/>
+        <Label layoutX="435.0" layoutY="14.0" prefHeight="58.0" prefWidth="331.0" text="Больше о работе"
+               textAlignment="CENTER" textFill="#00135e">
+            <font>
+                <Font name="System Italic" size="40.0"/>
+            </font>
+        </Label>
+        <Label layoutX="259.0" layoutY="72.0" prefHeight="58.0" prefWidth="684.0" text="Программный комплекс «Керамика»"
+               textAlignment="CENTER" textFill="#00135e">
+            <font>
+                <Font name="System Italic" size="40.0"/>
+            </font>
+        </Label>
+        <Text fill="#00135e" layoutX="116.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="Программный комплекс предназначен для изучения процесса обжига керамических изделий как объекта моделирования и автоматизации. Он позволяет выполнить:"
+              textAlignment="JUSTIFY" wrappingWidth="968.13671875">
+            <font>
+                <Font name="System Italic" size="30.0"/>
+            </font>
+            <effect>
+                <Bloom/>
+            </effect>
+        </Text>
+        <Text fill="#00135e" layoutX="109.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="- Контроль достоверности информационного канала измерения;" textAlignment="JUSTIFY"
+              wrappingWidth="968.13671875">
+            <font>
+                <Font name="System Italic" size="30.0"/>
+            </font>
+        </Text>
+        <Text fill="#00135e" layoutX="117.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="-Анализ динамической модели;" textAlignment="JUSTIFY" wrappingWidth="968.13671875">
+            <font>
+                <Font name="System Italic" size="30.0"/>
+            </font>
+        </Text>
+        <Text fill="#00135e" layoutX="116.0" layoutY="433.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="-Анализ особенностей технологического процесса;" textAlignment="JUSTIFY"
+              wrappingWidth="968.13671875">
+            <font>
+                <Font name="System Italic" size="30.0"/>
+            </font>
+        </Text>
+        <Text fill="#00135e" layoutX="116.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="-Анализ информационной модели;" textAlignment="JUSTIFY" wrappingWidth="968.13671875">
+            <font>
+                <Font name="System Italic" size="30.0"/>
+            </font>
+        </Text>
+        <Text fill="#00135e" layoutX="117.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="-Синтез одноконтурной АСР по выбранному каналу;" textAlignment="JUSTIFY"
+              wrappingWidth="968.13671875">
+            <font>
+                <Font name="System Italic" size="30.0"/>
+            </font>
+        </Text>
+        <Text fill="#00135e" layoutX="117.0" layoutY="556.0" strokeType="OUTSIDE" strokeWidth="0.0"
+              text="-Идентификацию отказов канала измерения температуры:" textAlignment="JUSTIFY"
+              wrappingWidth="968.13671875">
+            <font>
+                <Font name="System Italic" size="30.0"/>
+            </font>
+        </Text>
+    </children>
 </AnchorPane>

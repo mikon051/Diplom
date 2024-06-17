@@ -6,71 +6,117 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="641.0" prefWidth="1031.0" style="-fx-background-color: #d76604;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
-   <children>
-      <Button fx:id="MainMath" layoutX="810.0" layoutY="44.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="78.0" prefWidth="180.0" style="-fx-background-color: #ff6f1b;" text="Расчет">
-         <font>
-            <Font name="System Italic" size="22.0" />
-         </font></Button>
-      <TextField fx:id="TextP" layoutX="331.0" layoutY="45.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
-      <Label layoutX="277.0" layoutY="43.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;" text="P">
-         <font>
-            <Font name="System Italic" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="TextI" layoutX="331.0" layoutY="96.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
-      <Label layoutX="277.0" layoutY="94.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;" text="I">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="TextD" layoutX="331.0" layoutY="150.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
-      <Label layoutX="277.0" layoutY="148.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;" text="D">
-         <font>
-            <Font name="System Italic" size="18.0" />
-         </font>
-      </Label>
-      <TextField id="K0" fx:id="TextK0" layoutX="88.0" layoutY="46.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
-      <Label layoutX="34.0" layoutY="44.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;" text="K0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField id="T0" fx:id="TextT" layoutX="88.0" layoutY="95.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
-      <Label layoutX="34.0" layoutY="93.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;" text="T">
-         <font>
-            <Font name="System Italic" size="18.0" />
-         </font>
-      </Label>
-      <TextField id="Tay" fx:id="TextTay" layoutX="88.0" layoutY="151.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
-      <Label layoutX="34.0" layoutY="149.0" style="-fx-background-color: white;" text="Tay">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="TextDis" layoutX="652.0" layoutY="45.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
-      <Label layoutX="507.0" layoutY="46.0" style="-fx-background-color: white;" text="Дискретность">
-         <font>
-            <Font name="System Italic" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="TextQuest" layoutX="652.0" layoutY="96.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
-      <Label layoutX="505.0" layoutY="96.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;" text="Задание">
-         <font>
-            <Font name="System Italic" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="TextError" layoutX="652.0" layoutY="150.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
-      <Label layoutX="509.0" layoutY="149.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;" text="Ошибка">
-         <font>
-            <Font name="System Italic" size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="TextTime" layoutX="653.0" layoutY="194.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" />
-      <Label layoutX="510.0" layoutY="193.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;" text="Диапазон">
-         <font>
-            <Font name="System Italic" size="18.0" />
-         </font>
-      </Label>
-   </children>
+<AnchorPane prefHeight="641.0" prefWidth="1031.0" style="-fx-background-color: #d76604;"
+            stylesheets="@textFieldCss.css,@cssFile.css " xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
+    <children>
+        <Button fx:id="MainMath" layoutX="810.0" layoutY="44.0" mnemonicParsing="false" onAction="#handleButtonAction"
+                prefHeight="78.0" prefWidth="180.0" style="-fx-background-color: #ff6f1b;" styleClass="button-animated"
+                text="Расчет">
+            <font>
+                <Font name="System Italic" size="22.0"/>
+            </font>
+        </Button>
+        <TextField fx:id="TextP" layoutX="331.0" layoutY="45.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="277.0" layoutY="43.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;"
+               text="P" styleClass="text-field-orange">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="TextI" layoutX="331.0" layoutY="96.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="277.0" layoutY="94.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;"
+               text="I" styleClass="text-field-orange">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="TextD" layoutX="331.0" layoutY="150.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="277.0" layoutY="148.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;"
+               text="D" styleClass="text-field-orange">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </Label>
+        <TextField id="K0" fx:id="TextK0" layoutX="88.0" layoutY="46.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="34.0" layoutY="44.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;"
+               text="K0" styleClass="text-field-orange">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <TextField id="T0" fx:id="TextT" layoutX="88.0" layoutY="95.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="34.0" layoutY="93.0" prefHeight="27.0" prefWidth="28.0" style="-fx-background-color: white;"
+               text="T" styleClass="text-field-orange">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </Label>
+        <TextField id="Tay" fx:id="TextTay" layoutX="88.0" layoutY="151.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="34.0" layoutY="149.0" style="-fx-background-color: white;" text="Tay" styleClass="text-field-orange">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="TextDis" layoutX="652.0" layoutY="45.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="507.0" layoutY="46.0" style="-fx-background-color: white;" text="Дискретность" styleClass="text-field-orange">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="TextQuest" layoutX="652.0" layoutY="96.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="505.0" layoutY="96.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;"
+               text="Задание" styleClass="text-field-orange">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="TextError" layoutX="828.0" layoutY="514.0" prefHeight="27.0" prefWidth="79.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="828.0" layoutY="541.0" prefHeight="27.0" prefWidth="79.0" style="-fx-background-color: white;"
+               text="Ошибка" styleClass="text-field-orange">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </Label>
+        <TextField fx:id="TextTime" layoutX="652.0" layoutY="148.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="505.0" layoutY="148.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;"
+               text="Диапазон" styleClass="text-field-orange">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </Label>
+        <Button fx:id="Back" layoutY="618.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0"
+                prefWidth="1035.0"
+                style="             -fx-padding: 8 15 15 15;     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;   -fx-background-radius: 8;     -fx-background-color:    linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),         #9d4024,         #d86e3a,      #ff6f1b;     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );   "
+                styleClass="button-animated" text="Вернуться" textFill="WHITE">
+            <font>
+                <Font name="System Italic" size="30.0"/>
+            </font>
+        </Button>
+        <TextField fx:id="TextIkr" layoutX="700.0" layoutY="514.0" prefHeight="27.0" prefWidth="102.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange"/>
+        <Label layoutX="700.0" layoutY="541.0" prefHeight="27.0" prefWidth="102.0" style="-fx-background-color: white;"
+               text="I критерий" styleClass="text-field-orange">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </Label>
+        <Button fx:id="ONR" layoutX="810.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleButtonAction"
+                prefHeight="78.0" prefWidth="180.0" style="-fx-background-color: #ff6f1b;" styleClass="button-animated"
+                text="ОНР">
+            <font>
+                <Font name="System Italic" size="22.0"/>
+            </font>
+        </Button>
+    </children>
 </AnchorPane>

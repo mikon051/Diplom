@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="641.0" prefWidth="1031.0" style="-fx-background-color: #d76604;" stylesheets="@textFieldCss.css,@cssFile.css " xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
+    <children>
+        <Button fx:id="Graph" layoutX="810.0" layoutY="44.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="78.0" prefWidth="180.0" style="-fx-background-color: #ff6f1b;" styleClass="button-animated" text="Расчет">
+            <font>
+                <Font name="System Italic" size="22.0" />
+            </font>
+        </Button>
+        <TextField fx:id="TextP" layoutX="88.0" layoutY="202.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
+        <TextField fx:id="TextI" layoutX="88.0" layoutY="253.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
+        <TextField fx:id="TextSKO" layoutX="88.0" layoutY="307.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
+        <TextField id="L" fx:id="TextL" layoutX="88.0" layoutY="46.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
+        <Label layoutX="262.0" layoutY="46.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Введите значение уровня сигнала ( 0 - 1000)">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField id="SKO" fx:id="TextT" layoutX="88.0" layoutY="95.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
+        <Label layoutX="262.0" layoutY="95.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Введите СКО Bs/СКО (5-50)">
+            <font>
+                <Font name="System Italic" size="18.0" />
+            </font>
+        </Label>
+        <TextField id="Tay" fx:id="TextTay" layoutX="88.0" layoutY="151.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
+        <Label layoutX="262.0" layoutY="151.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Введите объем выборки V (2-199)">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="TextDis" layoutX="91.0" layoutY="358.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
+        <Label layoutX="260.0" layoutY="358.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Дискретность">
+            <font>
+                <Font name="System Italic" size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="TextQuest" layoutX="91.0" layoutY="409.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
+        <Label layoutX="260.0" layoutY="408.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Задание">
+            <font>
+                <Font name="System Italic" size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="TextTime" layoutX="91.0" layoutY="461.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
+        <Label layoutX="260.0" layoutY="460.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Диапазон">
+            <font>
+                <Font name="System Italic" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="Back" layoutY="618.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0" prefWidth="1035.0" style="             -fx-padding: 8 15 15 15;     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;   -fx-background-radius: 8;     -fx-background-color:    linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),         #9d4024,         #d86e3a,      #ff6f1b;     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );   " styleClass="button-animated" text="Вернуться" textFill="WHITE">
+            <font>
+                <Font name="System Italic" size="30.0" />
+            </font>
+        </Button>
+      <Label layoutX="260.0" layoutY="202.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Введите скорость дрейф Кb (0 - 10)">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="260.0" layoutY="253.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Введите величину сдвига ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+    </children>
+</AnchorPane>

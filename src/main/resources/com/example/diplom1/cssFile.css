@@ -1,10 +1,10 @@
 .button-animated {
-    -fx-background-color: #4CAF50; /* зеленый цвет */
+    -fx-background-color: #FFC107; /* зеленый цвет */
     -fx-text-fill: #FFFFFF; /* белый текст */
     -fx-font-size: 16; /* размер шрифта */
     -fx-font-weight: bold; /* жирный шрифт */
     -fx-border-width: 2; /* ширина границы */
-    -fx-border-color: #3e8e41; /* зеленая граница */
+    -fx-border-color: #FFC107; /* зеленая граница */
     -fx-border-radius: 5; /* радиус границы */
     -fx-padding: 10; /* отступы */
     -fx-cursor: hand; /* курсор в виде руки */
@@ -14,13 +14,13 @@
 }
 
 .button-animated:hover {
-    -fx-background-color: #3e8e41; /* темно-зеленый цвет при наведении */
-    -fx-border-color: #4CAF50; /* зеленая граница при наведении */
+    -fx-background-color:#FF9900; /* темно-зеленый цвет при наведении */
+    -fx-border-color:  #FFC107; /* зеленая граница при наведении */
 }
 
 .button-animated:pressed {
-    -fx-background-color: #2e6c31; /* темно-зеленый цвет при нажатии */
-    -fx-border-color: #3e8e41; /* зеленая граница при нажатии */
+    -fx-background-color: #FFC107; /* темно-зеленый цвет при нажатии */
+    -fx-border-color: #FF9900; /* зеленая граница при нажатии */
     -fx-scale-x: 0.9; /* масштабирование по горизонтали */
     -fx-scale-y: 0.9; /* масштабирование по вертикали */
     -fx-translate-x: 2; /* смещение по горизонтали */

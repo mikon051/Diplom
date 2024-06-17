@@ -1,0 +1,20 @@
+.text-field-orange {
+  background-color: #FFA07A; /* оранжевый фон */
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: #FFFFFF; /* белый текст */
+  box-shadow: 0 0 10px rgba(255, 160, 122, 0.5); /* тень */
+  transition: background-color 0.3s ease-in-out; /* анимация при фокусе */
+}
+
+.text-field-orange:focus {
+  background-color: #FFC107; /* более светлый оранжевый фон при фокусе */
+  box-shadow: 0 0 10px rgba(255, 192, 16, 0.7); /* более светлая тень при фокусе */
+}
+
+.text-field-orange::placeholder {
+  color: #CCCCCC; /* серый текст для placeholder */
+}

@@ -82,7 +82,7 @@
             <Font name="System Italic" size="41.0" />
          </font>
          <textFill>
-            <RadialGradient centerX="0.5331491712707183" centerY="0.5" radius="0.5">
+            <RadialGradient centerX="0.8370165745856354" centerY="0.5" radius="1.0">
                <stops>
                   <Stop>
                      <color>

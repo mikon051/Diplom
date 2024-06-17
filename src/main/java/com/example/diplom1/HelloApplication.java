@@ -11,25 +11,38 @@ import javafx.scene.chart.LineChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextFlow;
 import javafx.stage.Stage;
 import java.io.IOException;
 
 
 
 public class HelloApplication extends Application {
-
+    @FXML
+    private TextArea textFlow;
+    @FXML
+    private Button AboutWorkButton;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+
 
         Parent root = FXMLLoader.load(getClass().getResource("TitulScene.fxml"));
         primaryStage.setTitle("Диплом");
         primaryStage.setScene(new Scene(root, 1200, 678));
         primaryStage.show();
 //        System.err.printf("%3.2f\t%3.2f\t%3.2f\t%3.2f\n", target, actual, output, (target-actual));
+
+
     }
+
+
 
     public static void main(String[] args) {
 
@@ -37,23 +50,3 @@ public class HelloApplication extends Application {
     }
 
 }
-
-
-//    public class Main extends Application {
-//
-//        @Override
-//        public void start(Stage stage) {
-//        try {
-//
-//            Parent root = FXMLLoader.load(getClass().getResource("Diplom.fxml"));
-//            Scene scene = new Scene(root);
-//            stage.setScene(scene);
-//            stage.show();
-//
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-//        }
-//    }

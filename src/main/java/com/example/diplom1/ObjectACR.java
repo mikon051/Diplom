@@ -16,14 +16,8 @@ public class ObjectACR {
         Tay = tay;
     }
 
-//    public double getProcessValue(double output) {
-//        // модель объекта: y(t) = k * u(t) / (tau * s + 1)
-//        double processValue  = K0 * output / (T0 * 1 + 1)*Math.exp(-(this.Tay*1));
-//        return processValue;
-//    }
-//
     double L = calculateLaplacian(K0, T0, Tay );
-    public double formula() {
+    public double func() {
         return  (this.K0/((this.T0*L)+1))*Math.exp(-(this.Tay*L));
     }
 }
