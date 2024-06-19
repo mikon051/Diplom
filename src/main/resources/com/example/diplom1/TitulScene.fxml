@@ -7,8 +7,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.Shadow?>
@@ -30,11 +29,7 @@
             <Image url="file:\C:\Users\mikon\OneDrive\Рабочий стол\Diplom\Diplom\src\main\resources\pictures\e85e57b1e29b95c737a5de7b6996d872.jpg" />
          </image>
          <effect>
-            <Blend mode="OVERLAY" opacity="0.6">
-               <topInput>
-                  <GaussianBlur radius="22.31" />
-               </topInput>
-            </Blend>
+            <ColorAdjust brightness="-0.3" contrast="-0.09" saturation="0.16" />
          </effect>
       </ImageView>
       <MenuBar prefHeight="22.0" prefWidth="1200.0">
@@ -77,7 +72,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="281.0" layoutY="161.0" text="Исследование, Синтез, Диагностика " textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+      <Label layoutX="277.0" layoutY="140.0" text="Исследование, Синтез, Диагностика " textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="System Italic" size="41.0" />
          </font>
@@ -98,7 +93,7 @@
             </RadialGradient>
          </textFill>
       </Label>
-      <Label layoutX="467.0" layoutY="535.0" text="Санкт-Петербург" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+      <Label layoutX="468.0" layoutY="566.0" text="Санкт-Петербург" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="System Italic" size="31.0" />
          </font>
@@ -119,7 +114,7 @@
             </LinearGradient>
          </textFill>
       </Label>
-      <Label layoutX="567.0" layoutY="600.0" text="2024" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
+      <Label layoutX="567.0" layoutY="623.0" text="2024" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS">
          <font>
             <Font name="System Italic" size="31.0" />
          </font>
@@ -141,34 +136,30 @@
          </textFill>
       </Label>
 
-      <Label layoutX="318.0" layoutY="297.0" nodeOrientation="RIGHT_TO_LEFT" text="Нажмите &quot;Епter&quot;" textAlignment="JUSTIFY" textFill="#15ff00" textOverrun="CENTER_WORD_ELLIPSIS">
+      <Label layoutX="396.0" layoutY="312.0" nodeOrientation="RIGHT_TO_LEFT" text="Нажмите &quot;Епter&quot;" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS">
 
          <font>
-            <Font name="System Italic" size="70.0" />
+            <Font name="System Italic" size="50.0" />
          </font>
          <cursor>
             <Cursor fx:constant="TEXT" />
          </cursor>
          <effect>
-            <Lighting>
+            <Lighting specularConstant="0.97">
                <bumpInput>
-                  <Shadow blurType="GAUSSIAN" height="0.0" radius="0.0" width="0.0">
+                  <Shadow blurType="GAUSSIAN" height="1.0" radius="0.0" width="0.0">
                      <color>
                         <Color green="0.9333333373069763" blue="1.0" />
                      </color>
                   </Shadow>
                </bumpInput>
                <light>
-                  <Light.Distant>
-                     <color>
-                        <Color red="0.06666667014360428" green="1.0" />
-                     </color>
-                  </Light.Distant>
+                  <Light.Distant />
                </light>
             </Lighting>
          </effect>
       </Label>
-      <Pane layoutX="284.0" layoutY="271.0" prefHeight="155.0" prefWidth="615.0" style="-fx-border-color: white; -fx-border-radius: 100px; -fx-border-width: 5px;" />
+      <Pane layoutX="160.0" layoutY="53.0" prefHeight="175.0" prefWidth="936.0" style="-fx-border-color: white; -fx-border-radius: 100px; -fx-border-width: 5px;" />
 
   </children>
     <stylesheets>

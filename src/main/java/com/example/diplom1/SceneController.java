@@ -2,10 +2,16 @@ package com.example.diplom1;
 
 import java.awt.*;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
+
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import com.sun.tools.javac.Main;
 import javafx.animation.TranslateTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -23,9 +29,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
@@ -42,11 +50,18 @@ public class SceneController implements Initializable {
 
     Stage stage = new Stage();
     Parent root;
-
+    private LineChart lineChart;
+    @FXML
+    private TableView<TextData> tableView;
+    @FXML
+    private TableColumn<String, TextData> error, krView, trueFalse;
     @FXML
     private TextArea textFlow;
     @FXML
-    private TextField TextK0, TextT, TextTay, TextP, TextI, TextD, TextDis, TextQuest, TextError, TextTime, TextIkr, ONRTextP, ONRTextI, ONRTextD;
+    private TextField TextK0, TextT, TextTay, TextP, TextI, TextD, TextDis, TextQuest, TextError, TextTime, TextIkr;
+    @FXML
+    private TextField  alpha,  size,  discret,  start,  SKO,  timeWhenShift,  outlierVariance,  outlierProbability,
+            shiftPar, dispersOutlierProbability, Tmax, Tmin, deltaT;
     @FXML
     private Label Menu;
     @FXML
@@ -58,7 +73,8 @@ public class SceneController implements Initializable {
     @FXML
     private MenuButton OnObject, OnSynthesis;
     @FXML
-    private Button MainMenu, AboutWorkButton, Back, Back1, ProcessItem, TempItem, DiagnostItem, InfoItem, StrucACR, Math, Exit1, MainMath, ONR, OnDiagnostScene, OnDiagnost, Diagnost1, next, Graph;
+    private Button MainMenu, AboutWorkButton, Back, Back1, ProcessItem, TempItem, DiagnostItem, InfoItem, StrucACR,
+            Math, Exit1, MainMath, ONR, OnDiagnostScene, OnDiagnost, Diagnost1, next, Graph, DiagnosticMenu, Check;
 
     @FXML
     private void handleButtonAction(ActionEvent event) throws Exception {
@@ -88,12 +104,131 @@ public class SceneController implements Initializable {
                     stage.show();
                 }
                 else if (sourceButton.equals(Graph)) {
-                    LineChart<Number, Number> lineChart = DispersionGrowthSignalGenerator();
+
+                    String StringAlpha = this.alpha.getText();
+                    double alphaAccept = Double.parseDouble(StringAlpha);
+
+                    String StringSize = this.size.getText();
+                    double sizeAccept = Double.parseDouble(StringSize);
+
+                    String StringDiscret = this.discret.getText();
+                    double discretAccept = Double.parseDouble(StringDiscret);
+
+                    String StringStart = this.start.getText();
+                    double startAccept = Double.parseDouble(StringStart);
+
+                    String StringSKO = this.SKO.getText();
+                    double SKOAccept = Double.parseDouble(StringSKO);
+
+                    String StringTimeWhenShift = this.timeWhenShift.getText();
+                    double timeWhenShiftAccept = Double.parseDouble(StringTimeWhenShift);
+
+                    String StringOutlierVariance = this.outlierVariance.getText();
+                    double outlierVarianceAccept = Double.parseDouble(StringOutlierVariance);
+
+                    String StringOutlierProbability = this.outlierProbability.getText();
+                    double outlierProbabilityAccept = Double.parseDouble(StringOutlierProbability);
+
+                    String StringShiftPar = this.shiftPar.getText();
+                    double shiftParAccept = Double.parseDouble(StringShiftPar);
+
+                    String StringDispersOutlierProbability = this.dispersOutlierProbability.getText();
+                    double DispersOutlierProbabilityAccept = Double.parseDouble(StringDispersOutlierProbability);
+
+                    LineChart<Number, Number> lineChart = dispersionGrowthSignalGenerator(alphaAccept, sizeAccept, discretAccept,
+                            startAccept, SKOAccept, 0, timeWhenShiftAccept, outlierVarianceAccept, outlierProbabilityAccept, shiftParAccept
+                            , DispersOutlierProbabilityAccept);
                     Scene scene = new Scene(lineChart, 800, 600);
                     stage = new Stage();
                     stage.setScene(scene);
                     stage.show();
 
+                }
+
+                else if (sourceButton.equals(Check)) {
+                    double sum = 0;
+                    int count = 0;
+                    String StringTmax = this.Tmax.getText();
+                    double Tmax = Double.parseDouble(StringTmax);
+
+                    String StringTmin = this.Tmin.getText();
+                    double Tmin = Double.parseDouble(StringTmin);
+
+                    String StringDeltaT = this.deltaT.getText();
+                    double deltaT = Double.parseDouble(StringDeltaT);
+
+                    XYChart.Series<Number, Number> series = getLineChart2().getData().get(0); // assuming you have only one series
+                    //Расчет среднего арефметического по выборке lineChart
+                    for (XYChart.Data<Number, Number> data : series.getData()) {
+                        sum += data.getYValue().doubleValue();
+                        count++;
+                    }
+                    double average = sum / count;
+
+
+
+                    for (XYChart.Data<Number, Number> data : series.getData()) {
+                        if (data.getYValue().doubleValue() > Tmax) {
+                            ObservableList<TextData> dataView = FXCollections.observableArrayList(
+                                    new TextData("Обрыв в канале измерения", "Нарушение верхней технологической нормы", "Да"));
+                            // Set the data to the table view
+                            tableView.setItems(dataView);
+                        } else {
+                            ObservableList<TextData> dataView = FXCollections.observableArrayList(
+                                    new TextData("Обрыв в канале измерения", "Нарушение верхней технологической нормы", " нет"));
+                            // Set the data to the table view
+
+                        }
+
+                        if (data.getYValue().doubleValue() < Tmin) {
+                            ObservableList<TextData> dataView = FXCollections.observableArrayList(
+                                    new TextData("Обрыв в канале измерения", "Нарушение нижней технологической нормы, ", "Да"));
+                            // Set the data to the table view
+                            tableView.setItems(dataView);
+
+                        } else {
+                            ObservableList<TextData> dataView = FXCollections.observableArrayList(
+                                    new TextData("Обрыв в канале измерения", "Нарушение нижней технологической нормы", " нет"));
+                            // Set the data to the table view
+                            tableView.setItems(dataView);
+                        }
+                        if ((data.getYValue().doubleValue() < average - 50) || (data.getYValue().doubleValue() > average + 50)) {
+                            ObservableList<TextData> dataView = FXCollections.observableArrayList(
+                                    new TextData("Нарушение контактов термопары, возможное обгарание контактов", "Нарушение  технологических норм наличие выбросов в измеряемом сигнале", " Да"));
+                            // Set the data to the table view
+                            tableView.setItems(dataView);
+
+                        } else {
+                            ObservableList<TextData> dataView = FXCollections.observableArrayList(
+                                    new TextData("Нарушение контактов термопары, возможное обгарание контактов", "Нарушение  технологических норм наличие выбросов в измеряемом сигнале", "нет"));
+                            // Set the data to the table view
+                            tableView.setItems(dataView);
+                        }
+
+                    }
+
+
+                    TableColumn<TextData, String> error = new TableColumn<>("error ");
+                    TableColumn<TextData, String> krView = new TableColumn<>("krView ");
+                    TableColumn<TextData, String> trueFalse = new TableColumn<>("trueFalse");
+
+                    error.setCellValueFactory(new PropertyValueFactory<>(StringTmax));
+                    krView.setCellValueFactory(new PropertyValueFactory<>(StringTmin));
+                    trueFalse.setCellValueFactory(new PropertyValueFactory<>(StringDeltaT));
+
+                    tableView.getColumns().addAll(error, krView, trueFalse);
+
+                    error.setCellValueFactory(cellData -> cellData.getValue().text1Property());
+                    krView.setCellValueFactory(cellData -> cellData.getValue().text2Property());
+                    trueFalse.setCellValueFactory(cellData -> cellData.getValue().text3Property());
+
+                    StackPane root = new StackPane();
+                    root.getChildren().add(tableView);
+
+                    Scene scene = new Scene(root, 600, 800);
+                    stage = new Stage();
+                    stage.setScene(scene);
+                    stage.show();
                 }
                 else if (sourceButton.equals(ONR)) {
                     String StringK0 = this.TextK0.getText();
@@ -181,7 +316,15 @@ public class SceneController implements Initializable {
                     stage.show();
                 }
 
-            } else {
+            } else if (sourceButton.equals(DiagnosticMenu)) {
+                stage.close();
+                root = FXMLLoader.load(getClass().getResource("DiagnosticMenu.fxml"));
+                Scene scene = new Scene(root);
+                stage = new Stage();
+                stage.setScene(scene);
+                stage.show();
+            }
+            else {
                 if (sourceButton.equals(ProcessItem)) {
                     stage.close();
                     root = FXMLLoader.load(getClass().getResource("Process.fxml"));
@@ -198,7 +341,7 @@ public class SceneController implements Initializable {
                     stage.show();
                 } else if (sourceButton.equals(DiagnostItem)) {
                     stage.close();
-                    root = FXMLLoader.load(getClass().getResource("Diagnost.fxml"));
+                    root = FXMLLoader.load(getClass().getResource("Dinamic.fxml"));
                     Scene scene = new Scene(root);
                     stage = new Stage();
                     stage.setScene(scene);
@@ -262,7 +405,7 @@ public class SceneController implements Initializable {
         }
 
 
-
+//Анимации наведения мышки
 
     public void init(MouseEvent mouseEvent) {
         AboutWorkButton.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {

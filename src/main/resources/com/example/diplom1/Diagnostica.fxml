@@ -2,70 +2,199 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="641.0" prefWidth="1031.0" style="-fx-background-color: #d76604;" stylesheets="@textFieldCss.css,@cssFile.css " xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
+<AnchorPane prefHeight="641.0" prefWidth="1031.0" style="-fx-background-color: #d76604;"
+            stylesheets="@textFieldCss.css,@cssFile.css " xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
     <children>
-        <Button fx:id="Graph" layoutX="810.0" layoutY="44.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="78.0" prefWidth="180.0" style="-fx-background-color: #ff6f1b;" styleClass="button-animated" text="Расчет">
+        <Pane layoutX="745.0" layoutY="26.0" prefHeight="423.0" prefWidth="289.0"
+              style="-fx-background-color: Orange; -fx-border-color: White;">
+            <effect>
+                <Shadow>
+                    <color>
+                        <Color red="0.9078947305679321" green="0.418009877204895" blue="0.11348684132099152"/>
+                    </color>
+                </Shadow>
+            </effect>
+        </Pane>
+        <Pane layoutY="410.0" prefHeight="208.0" prefWidth="1035.0" style="-fx-background-color: Orange;">
+            <effect>
+                <Shadow>
+                    <color>
+                        <Color red="0.9078947305679321" green="0.418009877204895" blue="0.11348684132099152"/>
+                    </color>
+                </Shadow>
+            </effect>
+        </Pane>
+        <Button fx:id="Graph" layoutX="788.0" layoutY="105.0" mnemonicParsing="false" onAction="#handleButtonAction"
+                prefHeight="71.0" prefWidth="210.0" style="-fx-background-color: #ff6f1b;" styleClass="button-animated"
+                text="Расчет" textFill="WHITE">
             <font>
-                <Font name="System Italic" size="22.0" />
+                <Font name="System Italic" size="22.0"/>
             </font>
         </Button>
-        <TextField fx:id="TextP" layoutX="88.0" layoutY="202.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
-        <TextField fx:id="TextI" layoutX="88.0" layoutY="253.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
-        <TextField fx:id="TextSKO" layoutX="88.0" layoutY="307.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
-        <TextField id="L" fx:id="TextL" layoutX="88.0" layoutY="46.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
-        <Label layoutX="262.0" layoutY="46.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Введите значение уровня сигнала ( 0 - 1000)">
+        <TextField id="alpha" fx:id="alpha" layoutX="35.0" layoutY="150.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange" text="1"/>
+        <TextField id="shiftPar" fx:id="shiftPar" layoutX="35.0" layoutY="183.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange" text="50"/>
+        <TextField id="timeWhenShift" fx:id="timeWhenShift" layoutX="35.0" layoutY="218.0" prefHeight="27.0"
+                   prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="100"/>
+        <TextField id="start" fx:id="start" layoutX="35.0" layoutY="46.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange" text="300"/>
+        <Label layoutX="209.0" layoutY="46.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Введите значение уровня сигнала ( 0 - 1000)">
             <font>
-                <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
         </Label>
-        <TextField id="SKO" fx:id="TextT" layoutX="88.0" layoutY="95.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
-        <Label layoutX="262.0" layoutY="95.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Введите СКО Bs/СКО (5-50)">
+        <TextField id="SKO" fx:id="SKO" layoutX="35.0" layoutY="82.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange" text="5"/>
+        <Label layoutX="209.0" layoutY="82.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Введите СКО Bs/СКО (5-50)">
             <font>
-                <Font name="System Italic" size="18.0" />
+                <Font name="System Italic" size="18.0"/>
             </font>
         </Label>
-        <TextField id="Tay" fx:id="TextTay" layoutX="88.0" layoutY="151.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
-        <Label layoutX="262.0" layoutY="151.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Введите объем выборки V (2-199)">
+        <TextField id="size" fx:id="size" layoutX="35.0" layoutY="116.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange" text="200"/>
+        <Label layoutX="207.0" layoutY="116.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Введите объем выборки V (2-200)">
             <font>
-                <Font size="18.0" />
+                <Font size="18.0"/>
             </font>
         </Label>
-        <TextField fx:id="TextDis" layoutX="91.0" layoutY="358.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
-        <Label layoutX="260.0" layoutY="358.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Дискретность">
+        <TextField id="discret" fx:id="discret" layoutX="35.0" layoutY="253.0" prefHeight="27.0" prefWidth="142.0"
+                   style="-fx-background-color: white;" styleClass="text-field-orange" text="0.7"/>
+        <Label layoutX="35.0" layoutY="487.0" prefHeight="96.0" prefWidth="197.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Задайте тип модели формирования выбрасов " wrapText="true">
             <font>
-                <Font name="System Italic" size="18.0" />
+                <Font name="System Italic" size="18.0"/>
             </font>
         </Label>
-        <TextField fx:id="TextQuest" layoutX="91.0" layoutY="409.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
-        <Label layoutX="260.0" layoutY="408.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Задание">
+        <TextField id="outlierVariance" fx:id="outlierVariance" layoutX="35.0" layoutY="288.0" prefHeight="27.0"
+                   prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="30"/>
+        <Label layoutX="207.0" layoutY="288.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Ввыедите параметр модели выбросов Lambda (-50 - +50)">
             <font>
-                <Font name="System Italic" size="18.0" />
+                <Font name="System Italic" size="18.0"/>
             </font>
         </Label>
-        <TextField fx:id="TextTime" layoutX="91.0" layoutY="461.0" prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" />
-        <Label layoutX="260.0" layoutY="460.0" prefHeight="27.0" prefWidth="126.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Диапазон">
+        <Button fx:id="Back" layoutY="618.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0"
+                prefWidth="1035.0"
+                style="             -fx-padding: 8 15 15 15;     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;   -fx-background-radius: 8;     -fx-background-color:    linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),         #9d4024,         #d86e3a,      #ff6f1b;     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );   "
+                styleClass="button-animated" text="Вернуться" textFill="WHITE">
             <font>
-                <Font name="System Italic" size="18.0" />
-            </font>
-        </Label>
-        <Button fx:id="Back" layoutY="618.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0" prefWidth="1035.0" style="             -fx-padding: 8 15 15 15;     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;   -fx-background-radius: 8;     -fx-background-color:    linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),         #9d4024,         #d86e3a,      #ff6f1b;     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );   " styleClass="button-animated" text="Вернуться" textFill="WHITE">
-            <font>
-                <Font name="System Italic" size="30.0" />
+                <Font name="System Italic" size="30.0"/>
             </font>
         </Button>
-      <Label layoutX="260.0" layoutY="202.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Введите скорость дрейф Кb (0 - 10)">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="260.0" layoutY="253.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="Введите величину сдвига ">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+        <Label layoutX="207.0" layoutY="150.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Введите скорость дрейф Кb (1 - 10)">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label layoutX="207.0" layoutY="183.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Введите величину сдвига (-200 - +200)">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <MenuButton layoutX="786.0" layoutY="487.0" mnemonicParsing="false" prefHeight="96.0" prefWidth="210.0"
+                    style="          -fx-padding: 8 15 15 15;     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;     -fx-background-radius: 8;     -fx-background-color:       #ff6d19,         #9d4024,         #d86e3a,         #ff6f1b;     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );     -fx-font-weight: bold;     -fx-font-size: 1.1em;"
+                    styleClass="button-animated" text="Контроль" textFill="WHITE" wrapText="true">
+            <items>
+                <MenuItem mnemonicParsing="false">
+                    <graphic>
+                        <Button id="DiagnosticMenu" fx:id="DiagnosticMenu" mnemonicParsing="false"
+                                onAction="#handleButtonAction" prefHeight="71.0" prefWidth="210.0"
+                                style="-fx-background-color: #ff6f1b;" styleClass="button-animated"
+                                text="Идификация отказов измерительного канала" textFill="WHITE">
+                            <font>
+                                <Font name="System Italic" size="22.0"/>
+                            </font>
+                        </Button>
+                    </graphic>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false">
+                    <graphic>
+                        <Button fx:id="KrControl" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="71.0"
+                                prefWidth="210.0" style="-fx-background-color: #ff6f1b;" styleClass="button-animated"
+                                text="Критерии контроля" textFill="WHITE">
+                            <font>
+                                <Font name="System Italic" size="22.0"/>
+                            </font>
+                        </Button>
+                    </graphic>
+                </MenuItem>
+            </items>
+            <font>
+                <Font name="System Italic" size="22.0"/>
+            </font>
+        </MenuButton>
+        <Label layoutX="207.0" layoutY="218.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Введите момент сдвига (0 - объема выборки)">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <TextArea layoutX="260.0" layoutY="487.0" prefHeight="96.0" prefWidth="503.0"
+                  text="0 - Выбросов нет&#10;1 - Модель дисперсионного  роста&#10;2 - Модель сдвига среднего ">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </TextArea>
+        <TextField id="dispersOutlierProbability" fx:id="dispersOutlierProbability" layoutX="35.0" layoutY="325.0"
+                   prefHeight="27.0" prefWidth="142.0" style="-fx-background-color: white;"
+                   styleClass="text-field-orange" text="0.3"/>
+        <Label layoutX="207.0" layoutY="325.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Введите Вероятность дисперссии выбросов (0-1)">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </Label>
+        <Label layoutX="207.0" layoutY="253.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Введите дискретность расчетов (0.5 - 1)">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label layoutX="207.0" layoutY="360.0" prefHeight="27.0" prefWidth="503.0" style="-fx-background-color: white;"
+               styleClass="text-field-orange" text="Введите Вероятность выбросов (0-1)">
+            <font>
+                <Font name="System Italic" size="18.0"/>
+            </font>
+        </Label>
+        <TextField id="outlierProbability" fx:id="outlierProbability" layoutX="35.0" layoutY="360.0" prefHeight="27.0"
+                   prefWidth="142.0" style="-fx-background-color: white;" styleClass="text-field-orange" text="0.3"/>
+        <MenuBar prefHeight="27.0" prefWidth="1035.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Close"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Delete"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
     </children>
 </AnchorPane>
