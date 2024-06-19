@@ -2,15 +2,27 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="500.0" prefWidth="873.0" style="-fx-background-color: #14242B;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.diplom1.SceneController">
    <children>
-      <Text fill="DARKORANGE" layoutX="28.0" layoutY="413.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Исследуемый процесс характеризуется тремя группами переменныхвыходные переменные, отражающие состояние процесса, входныерегулирующие воздействия, переменные, отражающие влияние на объектвозмущающих воздействий.Параметры, характеризующие состояние процесса:" textAlignment="JUSTIFY" wrappingWidth="1136.08203125">
+      <Pane layoutY="43.0" prefHeight="339.0" prefWidth="1196.0" style="-fx-background-color: white;">
+         <effect>
+            <Shadow>
+               <color>
+                  <Color red="1.0" green="0.42619046568870544" />
+               </color>
+            </Shadow>
+         </effect>
+      </Pane>
+      <Text fill="DARKORANGE" layoutX="30.0" layoutY="412.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Исследуемый процесс характеризуется тремя группами переменныхвыходные переменные, отражающие состояние процесса, входныерегулирующие воздействия, переменные, отражающие влияние на объектвозмущающих воздействий.Параметры, характеризующие состояние процесса:" textAlignment="JUSTIFY" wrappingWidth="1136.08203125">
          <font>
             <Font name="System Italic" size="19.0" />
          </font>
@@ -25,7 +37,7 @@
             <Font name="System Italic" size="30.0" />
          </font>
       </Button>
-      <ImageView fitHeight="351.0" fitWidth="788.0" layoutX="235.0" layoutY="41.0">
+      <ImageView fitHeight="318.0" fitWidth="767.0" layoutX="235.0" layoutY="53.0">
          <image>
             <Image url="file:\C:\Users\mikon\OneDrive\Рабочий стол\Diplom\Diplom\src\main\resources\pictures\PhotoInfoModel.png" />
          </image>

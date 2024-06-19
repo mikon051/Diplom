@@ -60,7 +60,7 @@ public class SceneController implements Initializable {
     @FXML
     private TextField TextK0, TextT, TextTay, TextP, TextI, TextD, TextDis, TextQuest, TextError, TextTime, TextIkr;
     @FXML
-    private TextField  alpha,  size,  discret,  start,  SKO,  timeWhenShift,  outlierVariance,  outlierProbability,
+    private TextField alpha, size, discret, start, SKO, timeWhenShift, outlierVariance, outlierProbability,
             shiftPar, dispersOutlierProbability, Tmax, Tmin, deltaT;
     @FXML
     private Label Menu;
@@ -71,7 +71,7 @@ public class SceneController implements Initializable {
     @FXML
     private Label lbl1, lbl2;
     @FXML
-    private MenuButton OnObject, OnSynthesis;
+    private MenuButton OnObject, OnSynthesis, diag, syn, menuInfo;
     @FXML
     private Button MainMenu, AboutWorkButton, Back, Back1, ProcessItem, TempItem, DiagnostItem, InfoItem, StrucACR,
             Math, Exit1, MainMath, ONR, OnDiagnostScene, OnDiagnost, Diagnost1, next, Graph, DiagnosticMenu, Check;
@@ -94,16 +94,14 @@ public class SceneController implements Initializable {
                     stage = new Stage();
                     stage.setScene(scene);
                     stage.show();
-                }
-                else if (sourceButton.equals(AboutWorkButton)) {
+                } else if (sourceButton.equals(AboutWorkButton)) {
                     currentStage.close();
                     root = FXMLLoader.load(getClass().getResource("AboutWork.fxml"));
                     Scene scene = new Scene(root);
                     stage = new Stage();
                     stage.setScene(scene);
                     stage.show();
-                }
-                else if (sourceButton.equals(Graph)) {
+                } else if (sourceButton.equals(Graph)) {
 
                     String StringAlpha = this.alpha.getText();
                     double alphaAccept = Double.parseDouble(StringAlpha);
@@ -143,9 +141,7 @@ public class SceneController implements Initializable {
                     stage.setScene(scene);
                     stage.show();
 
-                }
-
-                else if (sourceButton.equals(Check)) {
+                } else if (sourceButton.equals(Check)) {
                     double sum = 0;
                     int count = 0;
                     String StringTmax = this.Tmax.getText();
@@ -164,7 +160,6 @@ public class SceneController implements Initializable {
                         count++;
                     }
                     double average = sum / count;
-
 
 
                     for (XYChart.Data<Number, Number> data : series.getData()) {
@@ -229,8 +224,7 @@ public class SceneController implements Initializable {
                     stage = new Stage();
                     stage.setScene(scene);
                     stage.show();
-                }
-                else if (sourceButton.equals(ONR)) {
+                } else if (sourceButton.equals(ONR)) {
                     String StringK0 = this.TextK0.getText();
                     double K0 = Double.parseDouble(StringK0);
 //           TextK0.clear();
@@ -242,37 +236,29 @@ public class SceneController implements Initializable {
                     String StringTay = this.TextTay.getText();
                     double Tay = Double.parseDouble(StringTay);
 
-                    this.TextP.setText(String.valueOf(1/K0));
+                    this.TextP.setText(String.valueOf(1 / K0));
                     this.TextI.setText(String.valueOf(T));
-                    this.TextD.setText(String.valueOf(Tay/2));
-                }
-                else if (sourceButton.equals(MainMath)) {
+                    this.TextD.setText(String.valueOf(Tay / 2));
+                } else if (sourceButton.equals(MainMath)) {
 
 
                     // Создаем сцену и добавляем график на нее
                     String StringK0 = this.TextK0.getText();
                     double K0 = Double.parseDouble(StringK0);
-//           TextK0.clear();
-//
                     String StringT = this.TextT.getText();
                     double T = Double.parseDouble(StringT);
-//           TextT.clear();
 
                     String StringTay = this.TextTay.getText();
                     double Tay = Double.parseDouble(StringTay);
-//           TextTay.clear();
 
                     String StringP = this.TextP.getText();
                     double P = Double.parseDouble(StringP);
-//           TextP.clear();
 
                     String StringI = this.TextI.getText();
                     double I = Double.parseDouble(StringI);
-//           TextI.clear();
 
                     String StringD = this.TextD.getText();
                     double D = Double.parseDouble(StringD);
-//           TextD.clear();
 
                     MiniPID miniPID = createMiniPID(P, I, D);
 
@@ -306,8 +292,7 @@ public class SceneController implements Initializable {
                     stage = new Stage();
                     stage.setScene(scene);
                     stage.show();
-                }
-                else if (sourceButton.equals(next)) {
+                } else if (sourceButton.equals(next)) {
                     currentStage.close();
                     root = FXMLLoader.load(getClass().getResource("AboutDiagnost2.fxml"));
                     Scene scene = new Scene(root);
@@ -323,8 +308,7 @@ public class SceneController implements Initializable {
                 stage = new Stage();
                 stage.setScene(scene);
                 stage.show();
-            }
-            else {
+            } else {
                 if (sourceButton.equals(ProcessItem)) {
                     stage.close();
                     root = FXMLLoader.load(getClass().getResource("Process.fxml"));
@@ -380,44 +364,61 @@ public class SceneController implements Initializable {
                     Scene scene = new Scene(root);
                     stage = new Stage();
                     stage.setScene(scene);
-                    stage.show();}
+                    stage.show();
+                } else if (sourceButton.equals(OnSynthesis)) {
+                    stage.close();
+                    root = FXMLLoader.load(getClass().getResource("Synthesis.fxml"));
+                    Scene scene = new Scene(root);
+                    stage = new Stage();
+                    stage.setScene(scene);
+                    stage.show();
 
-                    else if (sourceButton.equals(OnSynthesis)) {
-                        stage.close();
-                        root = FXMLLoader.load(getClass().getResource("Synthesis.fxml"));
-                        Scene scene = new Scene(root);
-                        stage = new Stage();
-                        stage.setScene(scene);
-                        stage.show();
+                } else if (sourceButton.equals(OnDiagnostScene)) {
+                    stage.close();
+                    root = FXMLLoader.load(getClass().getResource("Diagnostica.fxml"));
+                    Scene scene = new Scene(root);
+                    stage = new Stage();
+                    stage.setScene(scene);
+                    stage.show();
 
-                    } else if (sourceButton.equals(OnDiagnostScene)) {
-                        stage.close();
-                        root = FXMLLoader.load(getClass().getResource("Diagnostica.fxml"));
-                        Scene scene = new Scene(root);
-                        stage = new Stage();
-                        stage.setScene(scene);
-                        stage.show();
-
-                    }
                 }
-
             }
+
         }
+    }
 
 
 //Анимации наведения мышки
 
     public void init(MouseEvent mouseEvent) {
         AboutWorkButton.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
-            System.out.println("Mouse entered!");
             textFlow.setText("Описание процесса и то что включает в себя программа");
-
         });
         AboutWorkButton.setOnMouseExited(event -> {
             // Скрываем текст при уходе
             textFlow.clear();
         });
-
+        menuInfo.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
+            textFlow.setText("Вся информация о лабараторной работе");
+        });
+        menuInfo.setOnMouseExited(event -> {
+            // Скрываем текст при уходе
+            textFlow.clear();
+        });
+        syn.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
+            textFlow.setText("Создание объекта и регулятора и их синтез");
+        });
+        syn.setOnMouseExited(event -> {
+            // Скрываем текст при уходе
+            textFlow.clear();
+        });
+        diag.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
+            textFlow.setText("Диагностика и анализ сигнала датчиков печи");
+        });
+        diag.setOnMouseExited(event -> {
+            // Скрываем текст при уходе
+            textFlow.clear();
+        });
         ProcessItem.addEventHandler(MouseEvent.MOUSE_ENTERED, event -> {
             textFlow.setText("Описание технологии процесса");
         });

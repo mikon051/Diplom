@@ -86,7 +86,7 @@
                                                 <Font name="System Italic" size="14.0" />
                                             </font>
                                         </Button>
-                                        <MenuButton mnemonicParsing="false" prefHeight="68.0" prefWidth="135.0" style="          -fx-padding: 8 15 15 15;     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;     -fx-background-radius: 8;     -fx-background-color:       #ff6d19,         #9d4024,         #d86e3a,         #ff6f1b;     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );     -fx-font-weight: bold;     -fx-font-size: 1.1em;" styleClass="button-animated" text="Объект" textFill="WHITE">
+                                        <MenuButton fx:id="menuInfo" onMouseEntered="#init" onMouseExited="#init"  mnemonicParsing="false" prefHeight="68.0" prefWidth="135.0" style="          -fx-padding: 8 15 15 15;     -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0;     -fx-background-radius: 8;     -fx-background-color:       #ff6d19,         #9d4024,         #d86e3a,         #ff6f1b;     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );     -fx-font-weight: bold;     -fx-font-size: 1.1em;" styleClass="button-animated" text="Объект" textFill="WHITE">
                                             <items>
                                                 <MenuItem mnemonicParsing="false" text="1">
                                                     <graphic>
@@ -120,7 +120,7 @@
                                                 <Font name="System Italic" size="18.0" />
                                             </font>
                                         </MenuButton>
-                                        <MenuButton mnemonicParsing="false" prefHeight="68.0" prefWidth="164.0" style="-fx-padding: 8 15 15 15; -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0; -fx-background-radius: 8; -fx-background-color:         #ff6d19,       #9d4024,         #d86e3a,         #ff6f1b;        -fx-font-weight: bold;     -fx-font-size: 1.1em;" styleClass="button-animated" text="Синтез АСР" textFill="WHITE">
+                                        <MenuButton fx:id="syn" mnemonicParsing="false" onMouseEntered="#init" onMouseExited="#init"  prefHeight="68.0" prefWidth="164.0" style="-fx-padding: 8 15 15 15; -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0; -fx-background-radius: 8; -fx-background-color:         #ff6d19,       #9d4024,         #d86e3a,         #ff6f1b;        -fx-font-weight: bold;     -fx-font-size: 1.1em;" styleClass="button-animated" text="Синтез АСР" textFill="WHITE">
 
             
                                                         <items>
@@ -147,7 +147,7 @@
                                                 <Font name="System Italic" size="18.0" />
                                             </font>
                                         </MenuButton>
-                                        <MenuButton mnemonicParsing="false" prefHeight="68.0" prefWidth="183.0" style="-fx-padding: 8 15 15 15; -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0; -fx-background-radius: 8; -fx-background-color:         #ff6d19,       #9d4024,         #d86e3a,         #ff6f1b;        -fx-font-weight: bold;     -fx-font-size: 1.1em;" styleClass="button-animated" text="Диагностики" textFill="WHITE">
+                                        <MenuButton fx:id="diag" onMouseEntered="#init" onMouseExited="#init"  mnemonicParsing="false" prefHeight="68.0" prefWidth="183.0" style="-fx-padding: 8 15 15 15; -fx-background-insets: 0,0 0 5 0, 0 0 6 0, 0 0 7 0; -fx-background-radius: 8; -fx-background-color:         #ff6d19,       #9d4024,         #d86e3a,         #ff6f1b;        -fx-font-weight: bold;     -fx-font-size: 1.1em;" styleClass="button-animated" text="Диагностики" textFill="WHITE">
                                             <items>
                                                 <MenuItem mnemonicParsing="false" text="1">
                                                     <graphic>
